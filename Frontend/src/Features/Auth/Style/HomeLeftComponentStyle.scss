@@ -1,0 +1,67 @@
+.left {
+  border-right: 2px solid #3a3a3a;
+  width: 50%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftWrapper {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.leftWrapper h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  z-index: 5;
+  line-height: 1.2;
+}
+
+.leftWrapper span {
+  background: linear-gradient(
+    to right bottom,
+    pink,
+    rgb(237, 82, 82),
+    orange
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.leftWrapper img {
+  height: 38vh;
+  width: 28vh;
+  object-fit: cover;
+  border-radius: 1rem;
+  position: absolute;
+  transition: 0.3s;
+}
+
+.first {
+  top: 180px;
+  left: 20px;
+  rotate: -8deg;
+}
+
+.sec {
+  top: 180px;
+  right: 80px;
+  rotate: 8deg;
+}
+
+.third {
+  top: 150px;
+  left: 120px;
+  height: 42vh;
+  z-index: 2;
+}

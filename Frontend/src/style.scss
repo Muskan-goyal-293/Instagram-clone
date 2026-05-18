@@ -1,0 +1,17 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+body,
+html,
+#root {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+}
+
+button:active {
+  scale: 0.95;
+}

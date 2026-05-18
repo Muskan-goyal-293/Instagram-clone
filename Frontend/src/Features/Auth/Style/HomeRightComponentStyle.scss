@@ -1,0 +1,62 @@
+.right {
+  width: 50%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.rightWrapper {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 5rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.rightWrapper h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.rightWrapper button {
+  margin-top: 1rem;
+  padding: 0.9rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+  background: blue;
+
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.rightWrapper button:hover {
+  transform: scale(1.05);
+}
+
+.rightWrapper div {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color:white;
+}
+
+.rightWrapper .link {
+  color:blue;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 0.4rem;
+}
