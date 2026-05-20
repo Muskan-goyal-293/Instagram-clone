@@ -10,6 +10,7 @@ password :{
     type : String,
     required :[true , "field must be require"],
     minlength :6,
+    select : false,
 },
 month:{
     type : String,

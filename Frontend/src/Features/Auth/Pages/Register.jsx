@@ -1,26 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../Style/RegisterStyle.scss"
+import RegisterHook from "../Hook/RegisterHook";
 function Register() {
-const [userName , setUserName]= useState("")
-const [email , setEmail] = useState("")
-const [password ,setPassword] = useState("")
-const [month , setMonth] = useState("")
-const [day , setDay] = useState("")
+const {error , loading, register , setError ,setResult,result} = RegisterHook()
+// useStates 2-Way binding
+useEffect(()=>{
+  setError(null);
+  setResult("")
+},[])
+
+const [userName , setUserName]= useState("");
+const [email , setEmail] = useState("");
+const [password ,setPassword] = useState("");
+const [month , setMonth] = useState("");
+const [day , setDay] = useState("");
 const [year , setYear] = useState("");
-const [lastName , setLastName]= useState("")
-  return (
+const [lastName , setLastName]= useState("");
+
+// function to connect to api
+
+async function formHandler(e){
+e.preventDefault();
+const response = await register(email , password , month , day , year , userName , lastName); 
+if(!response){
+  return
+}
+
+setEmail("");
+setPassword("");
+setMonth("");
+setDay("");
+setYear("");
+setUserName("");
+setLastName("");
+}
+
+return (
     <main className="registerMain">
       <div className="registerWrapper">
         <div>
           <h1>Get start on instagram</h1>
           <h3>Sign up to see photos and videos from your friends.</h3>
         </div>
-        <form action="">
+        <form onSubmit={(e)=>{formHandler(e)}}>
           <div className="inputBoxes">
             <div>
               <label htmlFor="email">
-                {" "}
                 Email
                 <input
                   type="email"
@@ -28,6 +54,8 @@ const [lastName , setLastName]= useState("")
                   placeholder="email"
                   className="email input"
                   id="email"
+                  value={email}
+                  onChange={(e)=>{setEmail(e.target.value)}}
                 />
               </label>
             </div>
@@ -41,12 +69,15 @@ const [lastName , setLastName]= useState("")
                   id="password"
                   className="password input"
                   placeholder="password"
+                  value ={password}
+                  onChange={(e)=>{setPassword(e.target.value)}}
                 />
               </label>
             </div>
             <div>
               <h5>Birthday &#x3f;</h5>
-              <select required name="month" id="month"defaultValue="">
+              <select required name="month" id="month"defaultValue="" value={month} 
+              onChange={(e)=>{setMonth(e.target.value)}}>
                 <option value="" disabled>
                   Month
                 </option>
@@ -63,7 +94,9 @@ const [lastName , setLastName]= useState("")
                 <option value="november">November</option>
                 <option value="december">December</option>
               </select>
-              <select name="day" required id="day" defaultValue="">
+              <select name="day" required id="day" defaultValue="" value={day} onChange={(e)=>{
+                setDay(Number(e.target.value))
+              }}>
                 <option value="" disabled>  day
                 </option>
                 <option value="1">1</option>
@@ -98,8 +131,9 @@ const [lastName , setLastName]= useState("")
                 <option value="30">30</option>
                 <option value="31">31</option>
               </select>
-
-              <select name="year" id="year" required defaultValue="">
+              <select name="year" id="year" required defaultValue="" value={year} onChange={(e)=>{
+                setYear(Number(e.target.value))
+              }}>
                 <option value="" disabled>Year
                 </option>
                 <option value="2000">2000</option>
@@ -140,6 +174,8 @@ const [lastName , setLastName]= useState("")
                   required
                   className="name input"
                   id="name"
+                  value ={userName}
+                  onChange={(e)=>{setUserName(e.target.value)}}
                 />
               </label>
             </div>
@@ -152,18 +188,21 @@ const [lastName , setLastName]= useState("")
                   required
                   className="name input"
                   id="lastName"
+                  value={lastName}
+                  onChange={(e)=>{setLastName(e.target.value)}}
                 />
               </label>
             </div>
-
-            <button> Submit</button>
-            <button>
+        {result && <p className="result">{result}</p>}       
+        {error && <p className="error">{error}</p>}
+            <button>{loading ? "Loading" :"Submit"}</button>
+          </div>
+        </form>
+        <button>
               <Link className="loginLink" to="/login">
                 I have already an account
               </Link>
             </button>
-          </div>
-        </form>
       </div>
     </main>
   );
