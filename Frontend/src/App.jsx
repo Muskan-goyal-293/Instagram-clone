@@ -1,12 +1,14 @@
 import  Router  from "./Router.jsx"
 import "./style.scss"
 import { RegisterContext } from "./Features/Auth/Context/Register.Context.jsx"
+import { PostContext } from "./Features/post/Context/PostContext.jsx"
 function App() {
 
   return (
     <RegisterContext>
-      <Router/>
-
+      <PostContext>
+       <Router/>
+      </PostContext>
     </RegisterContext>
   )
 }

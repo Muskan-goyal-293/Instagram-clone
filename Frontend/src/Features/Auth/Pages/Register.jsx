@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Style/RegisterStyle.scss"
 import RegisterHook from "../Hook/RegisterHook";
 function Register() {
@@ -9,7 +9,7 @@ useEffect(()=>{
   setError(null);
   setResult("")
 },[])
-
+const navigate = useNavigate()
 const [userName , setUserName]= useState("");
 const [email , setEmail] = useState("");
 const [password ,setPassword] = useState("");
@@ -26,7 +26,7 @@ const response = await register(email , password , month , day , year , userName
 if(!response){
   return
 }
-
+navigate("/feed")
 setEmail("");
 setPassword("");
 setMonth("");

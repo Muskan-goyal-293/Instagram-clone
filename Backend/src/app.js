@@ -5,6 +5,7 @@ const port = 3000;
 const cors = require("cors");
 const cookiesParser = require("cookie-parser");
 const authRout = require("./Routes/auth.routes");
+const postRout = require("./Routes/post.routes")
 
 
 // middleWre
@@ -15,6 +16,7 @@ app.use(cors({
     credentials : true
 }))
 app.use("/api", authRout);
+app.use("/api" , postRout);
 
 
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import metaLogo from"../../../Images/meta logo.png"
 import "../Style/LoginStyle.scss"
 import RegisterHook from '../Hook/RegisterHook'
@@ -10,6 +10,7 @@ function Login() {
     setError(null);
     setResult("");
   },[])
+  const navigate = useNavigate()
  const[userName , setUserName]= useState("")
 const[password , setPassword] = useState("")
 
@@ -19,6 +20,9 @@ async function formHandler(e){
   if(!response){
     return
   }
+  navigate("/feed")
+ setUserName("");
+ setPassword("");
 }
   return (
   <main className='login'>

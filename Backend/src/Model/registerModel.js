@@ -35,6 +35,10 @@ lastName:{
     required:[true, "field must be required"],
     minlength : 2,
 },
+profileImage:{
+    type : String,
+    default :"https://ik.imagekit.io/1ris6t5in/3D%20Simple%20User%20Icon%20Isolated_%20Render%20Profile%20Photo%20Symbol%20UI.%20Avatar%20Sign.%20Person%20or%20People%20GUI%20Element.%20Realistic%20Vector%20Illustration?updatedAt=1778138659213"
+}
 },{
     timestamps : true
 })
