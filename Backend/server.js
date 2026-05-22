@@ -1,5 +1,5 @@
 // require module
-require("dotenv").config();
+// require("dotenv").config();
 const {app, port} = require("./src/app");
 const connectToDb = require("./src/Database/database");
 

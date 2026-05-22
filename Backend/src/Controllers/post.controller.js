@@ -1,10 +1,11 @@
 const postModel = require("../Model/postModel");
 const ImageKit = require("@imagekit/nodejs");
 const { toFile } = require("@imagekit/nodejs");
+const config = require("../Env/config")
 
 const imageKit = new ImageKit({
-  privateKey: process.env.IMAGEKIT_PRIVATE_URL,
-  publicKey: process.env.IMAGEKIT_PUBLIC_URL,
+  privateKey: config.IMAGEKIT_PRIVATE_URL,
+  publicKey: config.IMAGEKIT_PUBLIC_URL,
 });
 
 const createPost = async (req, res) => {

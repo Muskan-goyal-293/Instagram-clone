@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken")
+const config = require("../Env/config")
 
 function verifyUser(req, res , next){
 
@@ -20,7 +21,7 @@ if(!jwt_token){
 // token verify kiya
 verifyToken = jwt.verify(
     jwt_token,
-    process.env.JSON_TOKEN
+    config.JSON_TOKEN
 )
 
 // verify data req.user me store kiya

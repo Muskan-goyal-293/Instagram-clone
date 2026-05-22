@@ -1,14 +1,14 @@
 // imagekit package
 const ImageKit = require("@imagekit/nodejs");
 const { toFile } = require("@imagekit/nodejs");
-
+const config = require("../Env/config")
 // user model
 const userModel = require("../Model/registerModel");
 
 // imagekit config
 const imageKit = new ImageKit({
-    privateKey: process.env.IMAGEKIT_PRIVATE_URL,
-    publicKey: process.env.IMAGEKIT_PUBLIC_URL,
+    privateKey: config.IMAGEKIT_PRIVATE_URL,
+    publicKey: config.IMAGEKIT_PUBLIC_URL,
 });
 
 
@@ -52,7 +52,7 @@ const imageKit = new ImageKit({
 
                     fileName: req.file.originalname,
 
-                    folder: "Instagram_Post_folder",
+                    folder: "Instagram_Profile_Image",
                 });
 
                 // save image url in db

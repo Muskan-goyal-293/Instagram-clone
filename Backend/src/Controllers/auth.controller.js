@@ -2,6 +2,7 @@
 const jwt = require("jsonwebtoken");
 const userModel = require("../Model/registerModel");
 const bcrypt = require("bcrypt");
+const config = require("../Env/config")
 
 //  register function
 
@@ -51,7 +52,7 @@ const register = async (req, res) => {
         id: data._id,
         userName: data.userName,
       },
-      process.env.JSON_TOKEN,
+    config.JSON_TOKEN,
       { expiresIn: "48h" },
     );
 
@@ -133,7 +134,7 @@ const login = async (req, res) => {
         id: findUserExist._id,
         userName: findUserExist.userName,
       },
-      process.env.JSON_TOKEN,
+      config.JSON_TOKEN,
       {
         expiresIn: "48h",
       },
