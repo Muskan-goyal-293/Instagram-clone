@@ -9,7 +9,7 @@ import CreatePost from './Features/post/Pages/CreatePost'
 import Mainlayout from './Features/Layout/Mainlayout'
 import Feed from './Features/post/Pages/Feed'
 import EditProfile from './Features/UserProfileInfo/Pages/EditProfile'
-
+import ProfilePage from "./Features/UserProfile/Pages/ProfilePage"
 function Router() {
   return (
 
@@ -27,6 +27,7 @@ function Router() {
         <Route path='/feed' element={<Feed />} />
         <Route path='/create' element={<CreatePost />} />
          <Route path='/edit' element={<EditProfile/>}/>
+        <Route path='/profile' element={<ProfilePage/>}/>
       </Route>
 
     </Routes>
