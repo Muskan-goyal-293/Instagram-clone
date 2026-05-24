@@ -68,7 +68,7 @@ const register = async (req, res) => {
       year: data.year,
       userName: data.userName,
       lastName: data.lastName,
-    };
+    };   
 
     // send success response
     return res.status(201).json({

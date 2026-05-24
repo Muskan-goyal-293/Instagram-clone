@@ -5,6 +5,8 @@ import { PostContext } from "./Features/post/Context/PostContext.jsx"
 import { EditContext } from "./Features/UserProfileInfo/Context/EditContext.jsx"
 import { ProfileContext } from "./Features/UserProfile/Context/ProfileContext.jsx"
 import { PostMeContext } from "./Features/UserProfile/Context/PostMeContext.jsx"
+import {HomeContext} from "./Features/Home/Context/HomeContext.jsx"
+import { LikeContext } from "./Features/Home/Context/LikeContext.jsx"
 function App() {
 
   return (
@@ -13,7 +15,11 @@ function App() {
         <EditContext>
           <ProfileContext>
             <PostMeContext>
-           <Router/>
+              <HomeContext>
+                <LikeContext>
+                 <Router/>
+                </LikeContext>
+              </HomeContext>
             </PostMeContext>
           </ProfileContext>
         </EditContext>

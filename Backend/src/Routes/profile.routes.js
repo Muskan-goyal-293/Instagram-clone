@@ -2,11 +2,10 @@ const express = require("express");
 const profileRout = express.Router();
 
 const verifyUser = require("../Middleware/auth.middleware");
-const userModel = require("../Model/registerModel");
-const postModel = require("../Model/postModel");
 const {post , profile} = require("../Controllers/profile.controller");
 
 // USER PROFILE
+// api => http://localhost:3000/api/profile
 profileRout.get(
   "/profile",
   verifyUser,
@@ -15,6 +14,7 @@ profileRout.get(
 
 
 // USER POSTS
+// http://localhost:3000/api/posts/me
 profileRout.get(
   "/posts/me",
   verifyUser,

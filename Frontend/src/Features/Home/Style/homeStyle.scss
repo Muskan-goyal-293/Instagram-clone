@@ -1,0 +1,83 @@
+.feed {
+  width: 90%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.feed-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.post-card {
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+
+  h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-image {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 14px;
+}
+
+.like-btn,
+.save-btn {
+  background: none;
+  cursor: pointer;
+  transition: 0.2s;
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+.caption {
+  padding: 0 14px 16px;
+  font-size: 14px;
+
+  span {
+    font-weight: 600;
+    margin-right: 5px;
+  }
+}

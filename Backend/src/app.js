@@ -8,7 +8,8 @@ const authRout = require("./Routes/auth.routes");
 const postRout = require("./Routes/post.routes");
 const editRout = require("./Routes/edit.routes");
 const profileRout = require("./Routes/profile.routes");
-
+const homeRout = require("./Routes/home.routes");
+const likeRout = require("./Routes/like.routes")
 
 // middleWre
 app.use(express.json());
@@ -21,7 +22,8 @@ app.use("/api", authRout);
 app.use("/api" , postRout);
 app.use("/api" , editRout);
 app.use("/api", profileRout);
-
+app.use("/api" , homeRout);
+app.use("/api", likeRout);
 // export module
 
 module.exports={app, port}

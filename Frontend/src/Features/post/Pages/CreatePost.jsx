@@ -2,17 +2,20 @@ import React, { useState } from 'react'
 import { MdAddPhotoAlternate } from "react-icons/md";
 import "../Style/createPost.scss"
 import PostHook from '../Hook/PostHook';
+import { useNavigate } from 'react-router-dom';
+
 function CreatePost() {
 const[caption , setCaption]= useState("");
 const[image , setImage] = useState("");
 const{error, result, loading , postCreateFun} = PostHook();
-
+const navigate = useNavigate()
 async function formHandler(e){
     e.preventDefault();
     const result = await postCreateFun(caption , image);
     if(!result){
         return
     }
+    navigate("/home")
 }
 
 
