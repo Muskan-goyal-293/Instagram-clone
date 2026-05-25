@@ -1,9 +1,8 @@
 import "../Style/homeStyle.scss";
-import { FaHeart } from "react-icons/fa";
-import { FaBookmark } from "react-icons/fa";
 import HomeHook from "../Hooks/HomeHook";
 import { useEffect } from "react";
-
+import LikeButton from "../Components/LikeButton";
+import SaveButton from "../Components/SaveButton";
 function AllFeed() {
  const {error , result, loading, homeFun} = HomeHook()
 async function home(){
@@ -43,14 +42,8 @@ async function home(){
 
             {/* Buttons */}
             <div className="post-actions">
-              <button className="like-btn">
-                 <FaHeart />
-
-              </button>
-
-              <button className="save-btn">
-                <FaBookmark />
-              </button>
+           <LikeButton postId={val._id} />
+           <SaveButton savePost={val._id}/> 
             </div>
 
             {/* Caption */}

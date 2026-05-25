@@ -7,6 +7,8 @@ import { ProfileContext } from "./Features/UserProfile/Context/ProfileContext.js
 import { PostMeContext } from "./Features/UserProfile/Context/PostMeContext.jsx"
 import {HomeContext} from "./Features/Home/Context/HomeContext.jsx"
 import { LikeContext } from "./Features/Home/Context/LikeContext.jsx"
+import { SaveContext } from "./Features/Home/Context/SaveContext.jsx"
+import { SaveAllPostContext } from "./Features/SavePost/Context/SaveAllPostContext.jsx"
 function App() {
 
   return (
@@ -17,7 +19,11 @@ function App() {
             <PostMeContext>
               <HomeContext>
                 <LikeContext>
-                 <Router/>
+                  <SaveContext> 
+                    <SaveAllPostContext>
+                    <Router/>
+                    </SaveAllPostContext>
+                  </SaveContext>
                 </LikeContext>
               </HomeContext>
             </PostMeContext>

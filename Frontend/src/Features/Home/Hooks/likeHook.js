@@ -8,7 +8,8 @@ function LikeHook() {
         setError("");
         setResult("");
         const response = await like(postId);
-        setResult(response.data?.message);
+        console.log(response)
+        setResult(response.data);
         return true; 
     }
     catch(err){

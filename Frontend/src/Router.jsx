@@ -3,11 +3,13 @@ import { Routes, Route } from "react-router-dom"
 import Home from './Features/Auth/Components/Home'
 import Register from './Features/Auth/Pages/Register'
 import Login from './Features/Auth/Pages/Login'
+import Feed from './Features/post/Pages/Feed'
 import CreatePost from './Features/post/Pages/CreatePost'
 import Mainlayout from './Features/Layout/Mainlayout'
 import EditProfile from './Features/UserProfileInfo/Pages/EditProfile'
 import ProfilePage from "./Features/UserProfile/Pages/ProfilePage"
 import AllFeed from './Features/Home/Pages/AllFeed'
+import SavePost from './Features/SavePost/Pages/SavePost'
 function Router() {
   return (
 
@@ -21,11 +23,12 @@ function Router() {
 
       {/* with sidebar */}
       <Route element={<Mainlayout />}>
+              <Route path='/feed' element={<Feed />} />
         <Route path="/home" element={<AllFeed/>}/>
-        
         <Route path='/create' element={<CreatePost />} />
          <Route path='/edit' element={<EditProfile/>}/>
         <Route path='/profile' element={<ProfilePage/>}/>
+        <Route path='/save' element={<SavePost/>}/>
       </Route>
 
     </Routes>

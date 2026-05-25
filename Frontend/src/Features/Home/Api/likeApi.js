@@ -4,7 +4,7 @@ const api = axios.create({
     withCredentials : true
 })
 
-export async function like (postId){
+export default async function like (postId){
     const response = await api.post(`/like/${postId}`);
     return response
 }

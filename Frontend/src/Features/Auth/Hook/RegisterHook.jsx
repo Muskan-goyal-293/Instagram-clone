@@ -131,7 +131,6 @@ function RegisterHook() {
       )
 
       // store login response
-        console.log(response.data)
        setResult(response.data.message)
 
       return true;
