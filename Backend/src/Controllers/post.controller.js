@@ -1,6 +1,7 @@
 const postModel = require("../Model/postModel");
 const ImageKit = require("@imagekit/nodejs");
 const { toFile } = require("@imagekit/nodejs");
+const likeModel = require("../Model/LikeModel");
 const config = require("../Env/config")
 
 const imageKit = new ImageKit({
@@ -35,13 +36,17 @@ if(req.file.size > 2 * 1024 * 1024){
       folder: "Instagram_Post_folder",
     });
 
+
+    
     // database me post create ki
     const response = await postModel.create({
       caption: caption,
       image: result.url,
       user : id
     });
+    
 
+    
     // success response
     return res.status(201).json({
       success: true,

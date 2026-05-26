@@ -1,0 +1,57 @@
+.feed{
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    .feedContent{
+        width: 100%;
+        max-width: 700px;
+        text-align: center;
+        padding: 50px 30px;
+        border-radius: 30px;
+        background: linear-gradient(
+            135deg,
+            #833ab4,
+            #fd1d1d,
+            #fcb045
+        );
+
+        box-shadow: 
+        0 0 30px rgba(255,255,255,0.1);
+
+        h1{
+            font-size: 60px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        p{
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+        }
+    }
+}
+
+@media(max-width:768px){
+
+    .feed{
+
+        .feedContent{
+
+            h1{
+                font-size: 38px;
+            }
+
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+}

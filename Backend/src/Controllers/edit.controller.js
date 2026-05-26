@@ -56,7 +56,7 @@ const imageKit = new ImageKit({
                 });
 
                 // save image url in db
-                data.profile_image = result.url;
+                data.profileImage = result.url;
             }
 
             // update user data

@@ -9,6 +9,8 @@ import {HomeContext} from "./Features/Home/Context/HomeContext.jsx"
 import { LikeContext } from "./Features/Home/Context/LikeContext.jsx"
 import { SaveContext } from "./Features/Home/Context/SaveContext.jsx"
 import { SaveAllPostContext } from "./Features/SavePost/Context/SaveAllPostContext.jsx"
+import { ReelContext } from "./Features/Reels/Context/ReelContext.jsx"
+import { FetchAllReel } from "./Features/Reels/Context/FetchAllReelContext.jsx"
 function App() {
 
   return (
@@ -21,7 +23,12 @@ function App() {
                 <LikeContext>
                   <SaveContext> 
                     <SaveAllPostContext>
-                    <Router/>
+                     <ReelContext>
+                      <FetchAllReel>
+                      <Router/>
+
+                      </FetchAllReel>
+                     </ReelContext>
                     </SaveAllPostContext>
                   </SaveContext>
                 </LikeContext>

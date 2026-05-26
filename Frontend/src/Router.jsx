@@ -10,6 +10,8 @@ import EditProfile from './Features/UserProfileInfo/Pages/EditProfile'
 import ProfilePage from "./Features/UserProfile/Pages/ProfilePage"
 import AllFeed from './Features/Home/Pages/AllFeed'
 import SavePost from './Features/SavePost/Pages/SavePost'
+import Reel from './Features/Reels/Pages/Reel'
+import CreateReel from './Features/Reels/Pages/CreateReel'
 function Router() {
   return (
 
@@ -23,8 +25,10 @@ function Router() {
 
       {/* with sidebar */}
       <Route element={<Mainlayout />}>
+      <Route path='/create-reel' element={<CreateReel/>}/>
               <Route path='/feed' element={<Feed />} />
         <Route path="/home" element={<AllFeed/>}/>
+        <Route path='/reels' element={<Reel/>}/>
         <Route path='/create' element={<CreatePost />} />
          <Route path='/edit' element={<EditProfile/>}/>
         <Route path='/profile' element={<ProfilePage/>}/>

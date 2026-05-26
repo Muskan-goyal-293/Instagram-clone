@@ -5,7 +5,6 @@ const like = async(req, res)=>{
 
  // current login user id
  const {id} = req.user;
-
  // post id from params
  const {postId} = req.params;
 
@@ -35,17 +34,18 @@ const like = async(req, res)=>{
     "message" : "dislike post"
  })
 }
-
  // create new like document
  const data = await likeModel.create({
     user : id,
     post : postId,
+   
 })
 
  // like response
  return res.status(201).json({
     success : true,
-    "message" : "like post"
+    "message" : "like post",
+    data
  })
 
  }
