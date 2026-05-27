@@ -10,7 +10,7 @@ import { RiFolderVideoFill } from "react-icons/ri";
 import { FaSearch } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa";
-import { FiLogOut } from "react-icons/fi";
+
 import { FaBookmark } from "react-icons/fa";
 
 
@@ -25,7 +25,6 @@ function Sidebar() {
    <Link to="/Profile"><FaUserCircle /><span>Profile</span></Link>
    <Link to="/edit"><FaUserEdit /><span>Edit</span></Link>
  <Link to="/save"> <FaBookmark /><span>Save</span></Link>  
-<Link to="/logout"><FiLogOut /><span>Logout</span></Link>
    </main>
   )
 }

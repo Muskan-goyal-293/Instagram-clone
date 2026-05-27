@@ -12,6 +12,7 @@ import AllFeed from './Features/Home/Pages/AllFeed'
 import SavePost from './Features/SavePost/Pages/SavePost'
 import Reel from './Features/Reels/Pages/Reel'
 import CreateReel from './Features/Reels/Pages/CreateReel'
+import Search from './Features/Home/Pages/Search'
 function Router() {
   return (
 
@@ -33,6 +34,7 @@ function Router() {
          <Route path='/edit' element={<EditProfile/>}/>
         <Route path='/profile' element={<ProfilePage/>}/>
         <Route path='/save' element={<SavePost/>}/>
+        <Route path='/Search' element={<Search/>}/>
       </Route>
 
     </Routes>
